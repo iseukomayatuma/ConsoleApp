@@ -1,4 +1,3 @@
-#pragma once
 //======================================
 //	戦国シミュレーション  城ID
 //======================================
@@ -6,16 +5,16 @@
 #define __CASTLE_ID_H
 
 typedef enum {
-    CASTLE_YONEZAWA,        // 米沢城
-    CASTLE_KASUGAYAMA,      // 春日山城
-    CASTLE_TSUTSUJIGASAKI,  // 躑躅ヶ崎館
-    CASTLE_ODAWARA,         // 小田原城
-    CASTLE_OKAZAKI,         // 岡崎城
-    CASTLE_GIFU,            // 岐阜城
-    CASTLE_NIJO,            // 二条城
-    CASTLE_YOSHIDAKORIYAMA, // 吉田郡山城
-    CASTLE_OKO,             // 岡豊城
-    CASTLE_UCHI,            // 内城
+    CASTLE_SHIREI,  // 司隸
+    CASTLE_YOSHU,   // 豫州
+    CASTLE_KISHU,   // 冀州
+    CASTLE_ENSHU,   // 兗州
+    CASTLE_JOSHU,   // 徐州
+    CASTLE_KEISHU,  // 荊州
+    CASTLE_YOUSHU,  // 揚州
+    CASTLE_EKISHU,  // 益州
+    CASTLE_RYOSHU,  // 涼州
+    CASTLE_YUSHU,   // 幽州
     CASTLE_MAX,             // (種類の数)
     CASTLE_NONE = -1,         // リスト終端
 } CastleId;

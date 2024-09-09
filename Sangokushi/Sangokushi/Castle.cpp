@@ -7,153 +7,160 @@
 
 Castle castles[] =
 {
-	// CASTLE_YONEZAWA   米沢城 
+	// CASTLE_SHIREI 司隸
+{
+	"司隸",   // 名前
+	LORD_RIKAKU,  // 城主
+	TROOP_BASE, // 兵数
+	// 接続された城のリスト
 	{
-		"米沢城",   // 名前
-		LORD_DATE,  // 城主
+		CASTLE_YOSHU,   // 豫州
+		CASTLE_KISHU,   // 冀州
+		CASTLE_ENSHU,   // 兗州
+		CASTLE_KEISHU,  // 荊州
+		CASTLE_EKISHU,  // 益州
+		CASTLE_RYOSHU,  // 涼州
+		CASTLE_NONE,
+	},
+	 7, 7,      // 描画位置
+	"司隸",     // マップ上の名前
+},
+// CASTLE_YOSHU  豫州
+{
+	"豫州"   ,     // 名前
+	LORD_RYUBI,    // 城主
+	TROOP_BASE,     // 兵数
+	// 接続された城のリスト
+	{
+		CASTLE_SHIREI,  // 司隸 
+		CASTLE_ENSHU,   // 兗州
+		CASTLE_JOSHU,   // 徐州
+		CASTLE_KEISHU,  // 荊州
+		CASTLE_YOUSHU,  // 揚州
+		CASTLE_NONE,
+	},
+	19, 9,          // 描画位置
+	"豫州",         // マップ上の名前
+},
+
+// CASTLE_ENSHU  兗州
+	{
+		"兗州",     // 名前
+		LORD_SOSO,  // 城主
 		TROOP_BASE, // 兵数
 		// 接続された城のリスト
 		{
-			CASTLE_KASUGAYAMA,  // 春日山城
-			CASTLE_ODAWARA,     // 小田原城
+			CASTLE_SHIREI,  // 司隸
+			CASTLE_YOSHU,   // 豫州
+			CASTLE_KISHU,   // 冀州
+			CASTLE_JOSHU,   // 徐州
 			CASTLE_NONE,
 		},
-		45, 2,      // 描画位置
-		"米沢",     // マップ上の名前
+		19, 6,      // 描画位置
+		"兗州",     // マップ上の名前
 	},
-	// CASTLE_KASUGAYAMA 春日山城
+	// CASTLE_ENSHU  兗州
+{
+	"兗州",     // 名前
+	LORD_SOSO,  // 城主
+	TROOP_BASE, // 兵数
+	// 接続された城のリスト
 	{
-		"春日山城",     // 名前
-		LORD_UESUGI,    // 城主
+		CASTLE_SHIREI,  // 司隸
+		CASTLE_YOSHU,   // 豫州
+		CASTLE_KISHU,   // 冀州
+		CASTLE_JOSHU,   // 徐州
+		CASTLE_NONE,
+	},
+	19, 6,      // 描画位置
+	"兗州",     // マップ上の名前
+},
+	// CASTLE_JOSHU  徐州
+	{
+		"徐州",         // 名前
+		LORD_RYOFU,     // 城主
 		TROOP_BASE,     // 兵数
 		// 接続された城のリスト
 		{
-			CASTLE_YONEZAWA,        // 米沢城
-			CASTLE_TSUTSUJIGASAKI,  // 躑躅ヶ崎館
-			CASTLE_GIFU,             // 岐阜城
+			CASTLE_YOSHU,   // 豫州
+			CASTLE_KISHU,   // 冀州
+			CASTLE_ENSHU,   // 兗州
+			CASTLE_YOUSHU,  // 揚州
 			CASTLE_NONE,
 		},
-		37, 3,          // 描画位置
-		"春日",         // マップ上の名前
+		27, 7,          // 描画位置
+		"徐州",         // マップ上の名前
 	},
-	// CASTLE_TSUTSUJIGASAKI 躑躅ヶ崎館
+	// CASTLE_KEISHU 荊州
+{
+	"荊州",       // 名前
+	LORD_RYUHYO,  // 城主
+	TROOP_BASE,   // 兵数
+	// 接続された城のリスト
 	{
-		"躑躅ヶ崎館",   // 名前
-		LORD_TAKEDA,    // 城主
+		CASTLE_SHIREI,  // 司隸
+		CASTLE_YOSHU,   // 豫州
+		CASTLE_YOUSHU,  // 揚州
+		CASTLE_EKISHU,  // 益州
+		CASTLE_NONE,
+	},
+	11,11,      // 描画位置
+	"荊州",     // マップ上の名前
+},
+// CASTLE_YOUSHU 揚州
+	{
+		"揚州",         // 名前
+		LORD_SONSAKU,   // 城主
 		TROOP_BASE,     // 兵数
 		// 接続された城のリスト
 		{
-			CASTLE_KASUGAYAMA,  // 春日山城
-			CASTLE_ODAWARA,     // 小田原城
-			CASTLE_OKAZAKI,     // 岡崎城
+			CASTLE_YOSHU,   // 豫州
+			CASTLE_JOSHU,   // 徐州
+			CASTLE_KEISHU,  // 荊州
 			CASTLE_NONE,
 		},
-		39, 6,          // 描画位置
-		"躑躅",         // マップ上の名前
+		25,11,          // 描画位置
+		"揚州",         // マップ上の名前
 	},
-	// CASTLE_ODAWARA    小田原城
+	// CASTLE_EKISHU 益州
 	{
-		"小田原城", // 名前
-		LORD_HOJO,  // 城主
-		TROOP_BASE, // 兵数
-		// 接続された城のリスト
-		{
-			CASTLE_YONEZAWA,        // 米沢城
-			CASTLE_TSUTSUJIGASAKI,  // 躑躅ヶ崎館
-			CASTLE_OKAZAKI,         // 岡崎城
-			CASTLE_NONE,
-		},
-		41, 9,      // 描画位置
-		"小田",     // マップ上の名前
-	},
-	// CASTLE_OKAZAKI    岡崎城
-	{
-		"岡崎城",       // 名前
-		LORD_TOKUGAWA,  // 城主
+		"益州",   // 名前
+		LORD_RYUSHO,      // 城主
 		TROOP_BASE,     // 兵数
 		// 接続された城のリスト
 		{
-			CASTLE_TSUTSUJIGASAKI,  // 躑躅ヶ崎館
-			CASTLE_ODAWARA,         // 小田原城
-			CASTLE_GIFU,            // 岐阜城
+			CASTLE_SHIREI,  // 司隸
+			CASTLE_KEISHU,  // 荊州
 			CASTLE_NONE,
 		},
-		33, 9,          // 描画位置
-		"岡崎",         // マップ上の名前
+		 1,11,          // 描画位置
+		"益州",         // マップ上の名前
 	},
-	// CASTLE_GIFU   岐阜城
+	// CASTLE_RYOSHU 涼州
 	{
-		"岐阜城",   // 名前
-		LORD_ODA,   // 城主
-		TROOP_BASE, // 兵数
-		// 接続された城のリスト
-		{
-			CASTLE_KASUGAYAMA,  // 春日山城
-			CASTLE_OKAZAKI,     // 岡崎城
-			CASTLE_NIJO,        // 二条城
-			CASTLE_NONE,
-		},
-		27, 8,      // 描画位置
-		"岐阜",     // マップ上の名前
-	},
-	// CASTLE_NIJO   二条城
-	{
-		"二条城",       // 名前
-		LORD_ASHIKAGA,  // 城主
+		"涼州",         // 名前
+		LORD_BATO,     // 城主
 		TROOP_BASE,     // 兵数
 		// 接続された城のリスト
 		{
-			CASTLE_GIFU,            // 岐阜城
-			CASTLE_YOSHIDAKORIYAMA, // 吉田郡山城
-			CASTLE_OKO,             // 岡豊城
+			CASTLE_SHIREI,  // 司隸
 			CASTLE_NONE,
 		},
-		19, 9,          // 描画位置
-		"二条",         // マップ上の名前
+		 1, 3,          // 描画位置
+		"涼州",         // マップ上の名前
 	},
-	// CASTLE_YOSHIDAKORIYAMA    吉田郡山城
+	// CASTLE_YUSHU 幽州
 	{
-		"吉田郡山城",   // 名前
-		LORD_MORI,      // 城主
-		TROOP_BASE,     // 兵数
-		// 接続された城のリスト
-		{
-			CASTLE_NIJO,    // 二条城
-			CASTLE_OKO,     // 岡豊城
-			CASTLE_UCHI,    // 内城
-			CASTLE_NONE,
-		},
-		11, 9,          // 描画位置
-		"吉田",         // マップ上の名前
-	},
-	// CASTLE_OKO    岡豊城
-	{
-		"岡豊城",       // 名前
-		LORD_CHOSOKABE, // 城主
-		TROOP_BASE,     // 兵数
-		// 接続された城のリスト
-		{
-			CASTLE_NIJO,            // 二条城
-			CASTLE_YOSHIDAKORIYAMA, // 吉田郡山城
-			CASTLE_UCHI,            // 内城
-			CASTLE_NONE,
-		},
-		13,12,          // 描画位置
-		"岡豊",         // マップ上の名前
-	},
-	// CASTLE_UCHI  内城
-	{
-		"内城",         // 名前
-		LORD_SIMAZU,    // 城主
+		"幽州",         // 名前
+		LORD_KOSONSAN,    // 城主
 		TROOP_BASE,     // 兵数
 		//  接続された城のリスト
 		{
-			CASTLE_YOSHIDAKORIYAMA, // 吉田郡山城
-			CASTLE_OKO,             // 岡豊城
+			CASTLE_KISHU,   // 冀州
 			CASTLE_NONE,
 		},
-		 3,14,          // 描画位置
-		"内城",         // マップ上の名前
+		29, 1,          // 描画位置
+		"幽州",         // マップ上の名前
 	},
 };
 // 城の名前を取得

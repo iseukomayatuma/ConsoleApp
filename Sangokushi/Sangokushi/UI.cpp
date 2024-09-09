@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <string.h> // strchr()
 // 関数プロトタイプ
-static int getKeyInRange(int min, int max);
+static int getKeyInRange(int min, int max); 
 static char getKeyInList(const char* list);
 
 // プレーヤIDを入力する

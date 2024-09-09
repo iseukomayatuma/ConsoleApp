@@ -16,7 +16,8 @@ static void DrawEnding(Stage* stage);
 int main()
 {
     InitRand();
-
+    system("chcp 65001");// [6-5-0]コンソールの文字セットをUTF-8に設定する
+    InitRand();
     int c;
     do {
         game();
@@ -89,8 +90,7 @@ static void DrawEnding(Stage* stage)
     PrintChronology(stage->chro);
     int year = stage->year + 3;
     const char* name1 = GetLordMapName(stage, stage->playerLord);
-    printf("%dねん　 %s %sが　せいいたいしょうぐんに　にんぜられる\n", year, name1);
-    printf("%dねん　%s%sが　%sばくふを　ひらく\n", year, name1,"つよつよさいきょう");
+    printf("%dねん　 %s（%s）が　てんかを　とういつする\n", year, "にゃんこ軍団");
     putchar('\n');
     printf("ＴＨＥ　ＥＮＤ");
     WaitKey();
