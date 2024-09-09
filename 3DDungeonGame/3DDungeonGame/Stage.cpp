@@ -88,6 +88,7 @@ void DrawMap(Stage* stage)
 
 	for (int y = 0; y < MAZE_HEIGHT; y++) {
 		DrawMap_HorizontalWall(stage, y, DIR_NORTH);
+
 		for (int x = 0; x < MAZE_WIDTH; x++) {
 			Vector2 pos = { x,y };
 			const char* floor = "　";
@@ -156,6 +157,7 @@ void Draw3D(Stage* stage)
 			// ↑←↓→(0,1,2,3) をプレーヤ↓(2)　から見ると ↓→↑←(2,3,0,1) 
 			// ↑←↓→(0,1,2,3) をプレーヤ→(3)　から見ると ←↓→↑(1,2,3,0)
 			Direction dir = (Direction)((DIR_MAX + j - player->dir) % DIR_MAX);
+
 			if (GetMazeWall(stage, pos, (Direction)j) == false) {
 				continue;
 			}
@@ -163,13 +165,7 @@ void Draw3D(Stage* stage)
 			if (aa == nullptr) {
 				continue;
 			}
-			// screen にコピー
-			for (int k = 0; k < sizeof(screen) - 1; k++) {
-				const char c = aa[k];
-				if (c != ' ') {
-					screen[k] = c;
-				}
-			}
+			screen == aa;
 		}
 	}
 	//
@@ -194,7 +190,6 @@ void Draw3D(Stage* stage)
 		}
 	}
 }
-
 // mazeのposをdir 方向に掘る
 void DigWall(Stage* stage, Vector2 pos, Direction dir)
 {
@@ -229,25 +224,23 @@ bool CanDigWall(Stage* stage, Vector2 pos, Direction dir)
 	}
 	return true;
 }
-
 // mazeのposのdir セッター
 void SetMazeWall(Stage* stage, Vector2 pos, Direction dir, bool value)
 {
-	if (IsInsideMaze(pos)) {
-		stage->maze[pos.y][pos.x].walls[dir] = value;
-	}
+	// posとdir の範囲チェックを行って、okならvalueを代入します
+	// ★ここをコーディングしてください。
 }
+// mazeのposのdir ゲッター
 bool GetMazeWall(Stage* stage, Vector2 pos, Direction dir)
 {
-	if (IsInsideMaze(pos)) {
-		return stage->maze[pos.y][pos.x].walls[dir];
-	}
-	return false;
+	// posとdir の範囲チェックを行って、okなら値を返します
+	// そうでなければ falseを返します
+	// ★ここをコーディングしてください。
 }
-
 // 座標がmaze内か?
 bool IsInsideMaze(Vector2 pos)
 {
-	return 0 <= pos.x && pos.x < MAZE_WIDTH
-		&& 0 <= pos.y && pos.y < MAZE_HEIGHT;
+	// pos.x が 0 ～ MAZE_WIDTH-1　かつ
+	// pos.y が 0 ～ MAZE_HEIGHT-1 かを調べます
+	// ★ここをコーディングしてください。
 }
