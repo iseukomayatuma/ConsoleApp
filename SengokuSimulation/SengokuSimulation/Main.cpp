@@ -33,7 +33,7 @@ int main()
 }
 
 const int CHRONOLOGY_BUFF_SIZE = 1024;
-const int START_YEAR = 1570;
+const int START_YEAR = 1599;
 extern Castle castles[];
 
 static void game()
@@ -51,6 +51,15 @@ static void game()
     while (true) {
         // ターンの順番をシャフル
         MakeTurnOrder(stage);
+        if (stage->year >= 1600) {
+            ClearScreen;
+            printf("とうぐんの徳川家康\n,"
+                "「人事を尽くして天命を待つ」\n"
+                "せいぐんの石田三成\n"
+                "「ただ、我が身の潔白を天に誓うのみ」\n"
+                "かくして、関ケ原においてとうぐんが勝利し\n"
+                "戦国時代はまくをとじた。"); goto exit;
+        }
         for (int i = 0; i < stage->castlesSize; i++) {
             // 各城のターン実行
             ExecTurn(stage, i);
@@ -71,6 +80,10 @@ static void game()
         if (IsHonnojiEvent(stage)) {
             SetHonnojiEvent(stage);
             DrawHonnojiEvent(stage);
+        }
+        if (IsHonnojiEvent(stage)) {
+            SetHonnojiEvent(stage);
+            DrawSekigaharaEvent(stage);
         }
     }
 exit:
@@ -96,6 +109,18 @@ static void DrawHonnojiEvent(Stage* stage)
     WaitKey();
 }
 
+static void DrawSekigaharaEvent(Stage* stage)
+{
+    DrawScreen(stage, DM_Event, 0);
+    printf("とうぐんの徳川家康\n,"
+        "「人事を尽くして天命を待つ」\n"
+        "せいぐんの石田三成\n"
+        "「ただ、我が身の潔白を天に誓うのみ」\n"
+        "かくして、関ケ原においてとうぐんが勝利し\n"
+        "戦国時代はまくをとじた。");
+
+    WaitKey();
+}
 static void DrawGameOver(Stage* stage)
 {
     DrawScreen(stage, DM_GameOver, 0);

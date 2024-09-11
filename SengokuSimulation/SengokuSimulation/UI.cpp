@@ -78,19 +78,24 @@ Command InputPlayerTurn(Stage* stage, Castle* castle, CastleId* outTarget, int* 
 	*outTroopCount = troopCount;
 	return cmd;
 }
+
 // min～maxの数字を入力させる
 static int getKeyInRange(int min, int max)
 {
-	// ★ここをコーディングしてください。
-	//  GetKey()でキー入力し、min～max の数字キーが
-	//  入力されるまで繰り返します
-	//  min～maxの数字キーが押されたら、その数値を返します
+	unsigned char c;
+	int num;
+	do {
+		c = (unsigned char)GetKey();
+		num = c - '0';
+	} while (num < min || max < num);
+	return num;
 }
 // listにあるキーを入力させる
 static char getKeyInList(const char* list)
 {
-	// ★ここをコーディングしてください。
-	//  GetKey()でキー入力し、list文字列にあるキーが
-	//  入力されるまで繰り返します
-	//  list文字列にあるキーが押されたら、その文字を返します
+	char c;
+	do {
+		c = GetKey();
+	} while (strchr(list, c) == nullptr);
+	return c;
 }

@@ -204,6 +204,12 @@ void SetCastleOwner(Castle* castle, LordId owner)
 // •º”‚É‰ÁŽZ
 void AddCastleTroopCount(Castle* castle, int add)
 {
-	if (castle->troopCount += add <= TROOP_MAX && add != 0)
-		castle->troopCount += add;
+	int value = castle->troopCount + add;
+	if (value < 0) {
+		value = 0;
+	}
+	else if (value > TROOP_MAX) {
+		value = TROOP_MAX;
+	}
+	castle->troopCount = value;
 }

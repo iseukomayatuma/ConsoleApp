@@ -2,7 +2,6 @@
 //	戦国シミュレーション  城主
 //======================================
 #include "Lord.h"
-#include "LordId.h"
 
 typedef struct {
     const char* familyName;   // 姓
@@ -27,19 +26,24 @@ static LordName lordNames[LORD_MAX] = {
 // 城主の名を取得
 const char* GetLordFirstName(LordId id)
 {
-    if (id >= 0 && id > LORD_MAX) return lordNames->firstName;
-    else return "??";
+    if (0 <= id && id < LORD_MAX) {
+        return lordNames[id].firstName;
+    }
+    return "??";
 }
 // 城主の姓を取得
 const char* GetLordFamilyName(LordId id)
 {
-    if (id >= 0 && id > LORD_MAX) return lordNames->familyName;
-    else return "??";
+    if (0 <= id && id < LORD_MAX) {
+        return lordNames[id].familyName;
+    }
+    return "??";
 }
 // 城主のマップ上の名前を取得
 const char* GetLordMapName(LordId id)
 {
-    // idが 0～LORD_MAX-1 であることをチェックしてください。
-    if (id >= 0 && id > LORD_MAX) return lordNames->familyName;
-    else return "??";
+    if (0 <= id && id < LORD_MAX) {
+        return lordNames[id].mapName;
+    }
+    return "??";
 }

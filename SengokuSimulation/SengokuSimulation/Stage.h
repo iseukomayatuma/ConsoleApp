@@ -1,4 +1,3 @@
-#pragma once
 //======================================
 //	戦国シミュレーション  ステージ
 //======================================
@@ -25,6 +24,7 @@ typedef struct {
 	Chronology* chro;     // 年表
 	CastleId turnOrder[CASTLE_MAX];
 	bool isHonnojiEvent;  // 本能寺の変あったか?
+	bool isSekigaharaEvent; // 関ヶ原の辺あったか？
 } Stage;
 
 // 初期化
