@@ -47,6 +47,8 @@ void NextYear(Stage* stage);
 bool IsHonnojiEvent(Stage* stage);
 // 「本能寺の変」フラグセット
 void SetHonnojiEvent(Stage* stage);
+//　「関ヶ原の戦い」か?
+bool IsSekigaharaEvent(Stage* stage);
 // ターン実行
 void ExecTurn(Stage* stage, int turn);
 // プレーヤの負け?

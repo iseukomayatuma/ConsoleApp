@@ -148,15 +148,15 @@ bool IsHonnojiEvent(Stage* stage)
 	return stage->year == 1582
 		&& GetCastleOwner(stage, CASTLE_NIJO) == LORD_ODA;
 }
+// 「関ヶ原」か?
+bool IsSekigaharaEvent(Stage* stage)
+{
+	return stage->year == 1600;
+}
 // 「本能寺の変」フラグセット
 void SetHonnojiEvent(Stage* stage)
 {
 	stage->isHonnojiEvent = true;
-}
-// 「関ヶ原」か?
-bool IsSekigaharajiEvent(Stage* stage)
-{
-	return stage->year == 1600;
 }
 // 「関ヶ原」フラグセット
 void SetSekigaharaEvent(Stage* stage)
